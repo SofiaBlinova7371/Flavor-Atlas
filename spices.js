@@ -25,31 +25,23 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             // Function to highlight calendar months for the visible spice
-const highlightCalendarMonths = (startMonth, endMonth) => {
-    if (startMonth === "Year-round" || endMonth === "Year-round") {
-        // If the spice is available year-round, highlight all months
-        document.querySelectorAll('.calendar h2').forEach(monthElement => {
-            monthElement.style.backgroundColor = '#F2A461';
-        });
-    } else {
-        const startMonthIndex = months.indexOf(startMonth);
-        const endMonthIndex = months.indexOf(endMonth);
+            const highlightCalendarMonths = (startMonth, endMonth) => {
+                const startMonthIndex = months.indexOf(startMonth);
+                const endMonthIndex = months.indexOf(endMonth);
 
-        if (startMonthIndex > endMonthIndex) {
-            for (let i = startMonthIndex; i < months.length; i++) {
-                document.getElementById(months[i]).style.backgroundColor = '#F2A461';
-            }
-            for (let i = 0; i <= endMonthIndex; i++) {
-                document.getElementById(months[i]).style.backgroundColor = '#F2A461';
-            }
-        } else {
-            for (let i = startMonthIndex; i <= endMonthIndex; i++) {
-                document.getElementById(months[i]).style.backgroundColor = '#F2A461';
-            }
-        }
-    }
-};
-
+                if (startMonthIndex > endMonthIndex) {
+                    for (let i = startMonthIndex; i < months.length; i++) {
+                        document.getElementById(months[i]).style.backgroundColor = '#F2A461';
+                    }
+                    for (let i = 0; i <= endMonthIndex; i++) {
+                        document.getElementById(months[i]).style.backgroundColor = '#F2A461';
+                    }
+                } else {
+                    for (let i = startMonthIndex; i <= endMonthIndex; i++) {
+                        document.getElementById(months[i]).style.backgroundColor = '#F2A461';
+                    }
+                }
+            };
 
             // Function to adjust y-position of spice images based on flavor ratings
             const adjustPhotoPositions = (spiceName) => {
